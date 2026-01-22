@@ -169,7 +169,7 @@ export default function Home() {
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-4">
               Hello! I'm Adam Hinckley. I live in Alabama and I am seeking a
-              remote software engineer position. I have over six years of
+              remote software engineering position. I have over six years of
               experience as a frontend developer, specializing in building
               high-quality web applications using React, Next.js, and
               TypeScript.
