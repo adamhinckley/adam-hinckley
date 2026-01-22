@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Recommendations from "./components/Recommendations";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -164,11 +165,11 @@ export default function Home() {
         <section id="about" className="py-8 md:py-4 flex flex-col gap-6">
           {/* <h2 className="text-3xl font-bold text-black dark:text-white">
             About
-          </h2> */}
+            </h2> */}
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-4">
-              Hello! I'm Adam Hinckley. I live in Alabama...don't worry, I have
-              all of my teeth and I know that 2+2=4. I have over six years of
+              Hello! I'm Adam Hinckley. I live in Alabama and I am seeking a
+              remote software engineering position. I have over six years of
               experience as a frontend developer, specializing in building
               high-quality web applications using React, Next.js, and
               TypeScript.
