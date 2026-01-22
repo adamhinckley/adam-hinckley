@@ -407,10 +407,9 @@ export default function Home() {
                 August 2024 - Present
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                Early morning seminary for The Church of Jesus Christ of
-                Latter-day Saints. I volunteer as a seminary teacher for high
-                school students, teaching them principles of faith, integrity,
-                and service.
+                I volunteer as an early morning seminary teacher for high school
+                students, teaching them principles of faith, integrity, and
+                service for The Church of Jesus Christ of Latter-day Saints.
               </p>
             </div>
             <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
@@ -418,10 +417,10 @@ export default function Home() {
                 Fire & Fellowship
               </h3>
               <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                A meeting for men to gather, build relationships, and serve one
-                another. I organize and lead this group that meets periodically
-                at my backyard firepit to foster camaraderie and personal
-                growth.
+                A time for men to gather, build relationships, and serve one
+                another. I organize and lead this informal men's group, which
+                meets periodically around my backyard firepit to foster
+                camaraderie, personal growth, and community service.
               </p>
             </div>
           </div>
