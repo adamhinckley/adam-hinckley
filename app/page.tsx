@@ -7,7 +7,7 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black">
+    <div className="min-h-screen bg-zinc-50 dark:bg-black" id="top">
       {/* Navigation */}
       <nav className="sticky top-0 z-40 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -133,14 +133,14 @@ export default function Home() {
         )}
       </nav>
 
-      <main className="max-w-4xl mx-auto px-6 py-20">
+      <main className="max-w-4xl mx-auto px-6 py-0">
         {/* Hero Section */}
         <section id="top" className="py-16 md:py-24 flex flex-col gap-6">
           <div className="flex flex-col gap-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white">
+            {/* <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white">
               Adam Hinckley
-            </h1>
-            <p className="text-2xl text-zinc-600 dark:text-zinc-400">
+            </h1> */}
+            <p className="text-2xl text-black dark:text-white">
               Senior Frontend Developer
             </p>
           </div>
@@ -161,7 +161,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 flex flex-col gap-6">
+        <section id="about" className="py-8 md:py-4 flex flex-col gap-6">
           {/* <h2 className="text-3xl font-bold text-black dark:text-white">
             About
           </h2> */}
@@ -182,7 +182,7 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section className="py-16 flex flex-col gap-6">
+        <section id="skills" className="py-8 md:py-4 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-black dark:text-white">
             Skills
           </h2>
@@ -218,7 +218,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-16 flex flex-col gap-6">
+        <section id="experience" className="py-8 md:py-4 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-black dark:text-white">
             Experience
           </h2>
@@ -328,7 +328,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-16 flex flex-col gap-6">
+        <section id="projects" className="py-8 md:py-4 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-black dark:text-white">
             Featured Projects
           </h2>
@@ -394,7 +394,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="volunteer" className="py-16 flex flex-col gap-6 ">
+        <section id="volunteer" className="py-8 md:py-4 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-black dark:text-white">
             Volunteering
           </h2>
@@ -428,7 +428,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 flex flex-col gap-6">
+        <section id="contact" className="py-8 md:py-4 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-black dark:text-white">
             Get In Touch
           </h2>
