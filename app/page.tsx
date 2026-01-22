@@ -141,7 +141,7 @@ export default function Home() {
               Adam Hinckley
             </h1> */}
             <p className="text-2xl text-black dark:text-white">
-              Senior Frontend Developer
+              Senior Frontend Engineer
             </p>
           </div>
           <div className="flex gap-4 pt-4">
@@ -295,8 +295,8 @@ export default function Home() {
                   washes to sell auto glass repair and replacement
                 </li>
                 <li>
-                  • Maintenined relationships with carwash oweners to ensure
-                  continued business and growth opportunitiess
+                  • Maintained relationships with carwash owners to ensure
+                  continued business and growth opportunities
                 </li>
               </ul>
             </div>
