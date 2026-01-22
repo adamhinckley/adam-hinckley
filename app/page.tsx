@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black">
       {/* Navigation */}
@@ -14,7 +17,9 @@ export default function Home() {
           >
             Adam Hinckley
           </Link>
-          <div className="flex gap-6">
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-6">
             <Link
               href="#about"
               className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
@@ -26,6 +31,12 @@ export default function Home() {
               className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
             >
               Experience
+            </Link>
+            <Link
+              href="#education"
+              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+            >
+              Education
             </Link>
             <Link
               href="#projects"
@@ -46,7 +57,80 @@ export default function Home() {
               Contact
             </Link>
           </div>
+
+          {/* Hamburger Button */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 w-6 h-6"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`h-0.5 w-full bg-black dark:bg-white transition-transform ${
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-full bg-black dark:bg-white transition-opacity ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-full bg-black dark:bg-white transition-transform ${
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
+          </button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800">
+            <div className="max-w-4xl mx-auto px-6 py-4 flex flex-col gap-4">
+              <Link
+                href="#about"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="#experience"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Experience
+              </Link>
+              <Link
+                href="#education"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Education
+              </Link>
+              <Link
+                href="#projects"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link
+                href="#volunteer"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Volunteering
+              </Link>
+              <Link
+                href="#contact"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
 
       <main className="max-w-4xl mx-auto px-6 py-20">
@@ -246,17 +330,18 @@ export default function Home() {
         {/* Projects Section */}
         <section id="projects" className="py-16 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-black dark:text-white">
-            Featured Project
+            Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
               <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                Ward Program
+                Ward Program - personal
               </h3>
               <p className="text-zinc-600 dark:text-zinc-400 mb-4">
                 A "plain like paper" program for church congregations that
                 memebers get accces to by scanning a QR code. This has had
                 active users since July 2024. Built using Next.js, TypeScript,
+                and Material UI.
               </p>
               <div className="flex justify-between">
                 <a
@@ -274,6 +359,35 @@ export default function Home() {
                   rel="noopener noreferrer"
                 >
                   Github repository
+                </a>
+              </div>
+            </div>
+            <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
+              <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+                ClickBank Order Form - work
+              </h3>
+              <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                A highly customizable order form that is the last step in an
+                affiliate marketing sales funnel. This project led to a 70%
+                increase in customized forms and an 8% increase in overall
+                conversion. Built using Next.js, TypeScript, and Material UI.
+              </p>
+              <div className="flex justify-between">
+                <a
+                  href="https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex"
+                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  vanilla order form
+                </a>
+                <a
+                  href="https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&exitoffer=exitoffer2&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&template=6A-bottles&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex"
+                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  cstomized order form
                 </a>
               </div>
             </div>
