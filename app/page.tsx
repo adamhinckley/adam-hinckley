@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import Recommendations from "./components/Recommendations";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
