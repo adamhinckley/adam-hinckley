@@ -175,7 +175,7 @@ export default function Home() {
             </p>
             <p className="text-lg text-zinc-600 dark:text-zinc-400">
               When I'm not coding, you can find me volunteering in my community,
-              growing food in my garden, or mediating arugments between my
+              growing food in my garden, or mediating arguments between my
               children about who gets the last piece of pizza.
             </p>
           </div>
@@ -228,24 +228,25 @@ export default function Home() {
                 Senior Frontend Developer
               </h3>
               <p className="text-zinc-600 dark:text-zinc-400">
-                ClickBank • December 2019 - January - 2026, Boise, ID (remote)
+                ClickBank • December 2019 - January 2026, Boise, ID (remote)
               </p>
               <ul className="mt-3 space-y-2 text-zinc-600 dark:text-zinc-400">
                 <li>
-                  • Rewrote a lightning fast and highly customizable{" "}
+                  • Built a high-performance, responsive, and customizable{" "}
                   <a
                     href="https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=f30e0cda-3465-4bd5-894d-3001a36f282f&exitoffer=exitoffer2&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&template=6A-bottles&time=1768962175&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex"
                     className="underline"
                   >
                     order form{" "}
                   </a>
-                  and WYSIWYG editor resulting in a 70% increase in customized
-                  forms that lead to an 8% increase in overall conversion
+                  and WYSIWYG editor, resulting in a 70% increase in customized
+                  forms leading to an 8% increase in overall conversion
                 </li>
                 <li>
-                  • Migrated internal accounting tools from an outdated monorepo
-                  into micro-frontend architecture increasing making so the
-                  accoiunting team could complete tasks 30% faster.
+                  • Led migration of multiple accounting tools into an updated
+                  micro-frontend architecture with modernized UI and SSO login,
+                  reducing chargeback, payment, and service processing time by
+                  50%.
                 </li>
                 <li>
                   • Created a host of new MJML email templates using React,
@@ -272,10 +273,13 @@ export default function Home() {
               </p>
               <ul className="mt-3 space-y-2 text-zinc-600 dark:text-zinc-400">
                 <li>
-                  •Hired and managed a team of 25 agents, growing client base to
-                  15,000+ through nationwide sales and product training
-                  initiatives, and built custom software simplifying processes
-                  for 2,000+ agents
+                  • Led a team of 25 agents, expanding the client base to over
+                  15,000 through targeted nationwide sales and comprehensive
+                  product training programs.
+                </li>
+                <li>
+                  • Developed custom software solutions that streamlined
+                  operations and simplified processes for 2,000+ agents.
                 </li>
               </ul>
             </div>
@@ -291,12 +295,14 @@ export default function Home() {
               </p>
               <ul className="mt-3 space-y-2 text-zinc-600 dark:text-zinc-400">
                 <li>
-                  • Trained and suppored sales representatives that worked a car
-                  washes to sell auto glass repair and replacement
+                  • Led training and ongoing support for sales representatives
+                  at car wash locations, achieving 60% year-over-year sales
+                  increase.
                 </li>
                 <li>
-                  • Maintained relationships with carwash owners to ensure
-                  continued business and growth opportunities
+                  • Cultivated and maintained relationships with car wash
+                  owners, securing continued partnerships and uncovering new
+                  growth opportunities.
                 </li>
               </ul>
             </div>
@@ -321,110 +327,112 @@ export default function Home() {
                 Utah Valley University
               </h3>
               <p className="text-zinc-600 dark:text-zinc-400">
-                Culinart Arts • 2003 - 2006
+                Culinary Arts • 2003 - 2006
               </p>
             </div>
           </div>
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-8 md:py-4 flex flex-col gap-6">
-          <h2 className="text-3xl font-bold text-black dark:text-white">
-            Featured Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                Ward Program - personal
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                A "plain like paper" program for church congregations that
-                memebers get accces to by scanning a QR code. This has had
-                active users since July 2024. Built using Next.js, TypeScript,
-                and Material UI.
-              </p>
-              <div className="flex justify-between">
-                <a
-                  href="https://www.wardprogram.com/"
-                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Website
-                </a>
-                <a
-                  href="https://github.com/adamhinckley/ward-program"
-                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Github repository
-                </a>
+        <>
+          <section id="projects" className="py-16 flex flex-col gap-6">
+            <h2 className="text-3xl font-bold text-black dark:text-white">
+              Featured Project
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
+                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+                  Ward Program
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                  A "plain like paper" program for church congregations that
+                  members get access to by scanning a QR code. This has had
+                  active users since July 2024. Built using Next.js, TypeScript,
+                  and Material UI.
+                </p>
+                <div className="flex justify-between">
+                  <a
+                    href="https://www.wardprogram.com/"
+                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Website
+                  </a>
+                  <a
+                    href="https://github.com/adamhinckley/ward-program"
+                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Github repository
+                  </a>
+                </div>
+              </div>
+              <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
+                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+                  ClickBank Order Form - work
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                  A highly customizable order form that is the last step in an
+                  affiliate marketing sales funnel. This project led to a 70%
+                  increase in customized forms and an 8% increase in overall
+                  conversion. Built using Next.js, TypeScript, and Material UI.
+                </p>
+                <div className="flex justify-between">
+                  <a
+                    href="https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex"
+                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    vanilla order form
+                  </a>
+                  <a
+                    href="https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&exitoffer=exitoffer2&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&template=6A-bottles&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex"
+                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    customized order form
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                ClickBank Order Form - work
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                A highly customizable order form that is the last step in an
-                affiliate marketing sales funnel. This project led to a 70%
-                increase in customized forms and an 8% increase in overall
-                conversion. Built using Next.js, TypeScript, and Material UI.
-              </p>
-              <div className="flex justify-between">
-                <a
-                  href="https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex"
-                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  vanilla order form
-                </a>
-                <a
-                  href="https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&exitoffer=exitoffer2&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&template=6A-bottles&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex"
-                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  cstomized order form
-                </a>
+          </section>
+          <section id="volunteer" className="py-16 flex flex-col gap-6 ">
+            <h2 className="text-3xl font-bold text-black dark:text-white">
+              Volunteering
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
+                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+                  Youth Seminary Teacher
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                  August 2024 - Present
+                </p>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                  Early morning seminary for The Church of Jesus Christ of
+                  Latter-day Saints. I volunteer as a seminary teacher for high
+                  school students, teaching them principles of faith, integrity,
+                  and service.
+                </p>
+              </div>
+              <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
+                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+                  Fire & Fellowship
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                  A meeting for men to gather, build relationships, and serve
+                  one another. I organize and lead this group that meets
+                  periodically at my backyard firepit to foster camaraderie and
+                  personal growth.
+                </p>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section id="volunteer" className="py-8 md:py-4 flex flex-col gap-6">
-          <h2 className="text-3xl font-bold text-black dark:text-white">
-            Volunteering
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                Youth Seminary Teacher
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                August 2024 - Present
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                I volunteer as an early morning seminary teacher for high school
-                students, teaching them principles of faith, integrity, and
-                service for The Church of Jesus Christ of Latter-day Saints.
-              </p>
-            </div>
-            <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
-              <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                Fire & Fellowship
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                A time for men to gather, build relationships, and serve one
-                another. I organize and lead this informal men's group, which
-                meets periodically around my backyard firepit to foster
-                camaraderie, personal growth, and community service.
-              </p>
-            </div>
-          </div>
-        </section>
+          </section>
+        </>
 
         {/* Contact Section */}
         <section id="contact" className="py-8 md:py-4 flex flex-col gap-6">
