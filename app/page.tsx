@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black">
+    <div className="min-h-screen bg-zinc-50 dark:bg-black" id="top">
       {/* Navigation */}
       <nav className="sticky top-0 z-40 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -14,7 +17,9 @@ export default function Home() {
           >
             Adam Hinckley
           </Link>
-          <div className="flex gap-6">
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-6">
             <Link
               href="#about"
               className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
@@ -26,6 +31,12 @@ export default function Home() {
               className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
             >
               Experience
+            </Link>
+            <Link
+              href="#education"
+              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+            >
+              Education
             </Link>
             <Link
               href="#projects"
@@ -46,18 +57,91 @@ export default function Home() {
               Contact
             </Link>
           </div>
+
+          {/* Hamburger Button */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 w-6 h-6"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`h-0.5 w-full bg-black dark:bg-white transition-transform ${
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-full bg-black dark:bg-white transition-opacity ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-full bg-black dark:bg-white transition-transform ${
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
+          </button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800">
+            <div className="max-w-4xl mx-auto px-6 py-4 flex flex-col gap-4">
+              <Link
+                href="#about"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="#experience"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Experience
+              </Link>
+              <Link
+                href="#education"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Education
+              </Link>
+              <Link
+                href="#projects"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link
+                href="#volunteer"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Volunteering
+              </Link>
+              <Link
+                href="#contact"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
 
-      <main className="max-w-4xl mx-auto px-6 py-20">
+      <main className="max-w-4xl mx-auto px-6 py-0">
         {/* Hero Section */}
         <section id="top" className="py-16 md:py-24 flex flex-col gap-6">
           <div className="flex flex-col gap-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white">
+            {/* <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white">
               Adam Hinckley
-            </h1>
-            <p className="text-2xl text-zinc-600 dark:text-zinc-400">
-              Senior Frontend Developer
+            </h1> */}
+            <p className="text-2xl text-black dark:text-white">
+              Senior Frontend Engineer
             </p>
           </div>
           <div className="flex gap-4 pt-4">
@@ -77,14 +161,14 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 flex flex-col gap-6">
+        <section id="about" className="py-8 md:py-4 flex flex-col gap-6">
           {/* <h2 className="text-3xl font-bold text-black dark:text-white">
             About
-          </h2> */}
+            </h2> */}
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-4">
-              Hello! I'm Adam Hinckley. I live in Alabama...don't worry, I have
-              all of my teeth and I know that 2+2=4. I have over six years of
+              Hello! I'm Adam Hinckley. I live in Alabama and I am seeking a
+              remote software engineering position. I have over six years of
               experience as a frontend developer, specializing in building
               high-quality web applications using React, Next.js, and
               TypeScript.
@@ -98,7 +182,7 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section className="py-16 flex flex-col gap-6">
+        <section id="skills" className="py-8 md:py-4 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-black dark:text-white">
             Skills
           </h2>
@@ -134,7 +218,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-16 flex flex-col gap-6">
+        <section id="experience" className="py-8 md:py-4 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-black dark:text-white">
             Experience
           </h2>
@@ -351,7 +435,7 @@ export default function Home() {
         </>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 flex flex-col gap-6">
+        <section id="contact" className="py-8 md:py-4 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-black dark:text-white">
             Get In Touch
           </h2>

@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Adam Hinckley",
   description: "Senior Frontend Developer Portfolio of Adam Hinckley",
+  referrer: "no-referrer",
 };
 
 export default function RootLayout({
