@@ -337,18 +337,18 @@ export default function Home() {
         <>
           <section id="projects" className="py-16 flex flex-col gap-6">
             <h2 className="text-3xl font-bold text-black dark:text-white">
-              Featured Project
+              Featured Projects
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
                 <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                  Ward Program
+                  Ward Program - personal
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-400 mb-4">
                   A "plain like paper" program for church congregations that
                   members get access to by scanning a QR code. This has had
-                  active users since July 2024. Built using Next.js, TypeScript,
-                  and Material UI.
+                  active users since July 2024 and is maintained in production.
+                  Built using Next.js, TypeScript, and Material UI.
                 </p>
                 <div className="flex justify-between">
                   <a
@@ -371,7 +371,7 @@ export default function Home() {
               </div>
               <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
                 <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                  ClickBank Order Form - work
+                  ClickBank Order Form - professional
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-400 mb-4">
                   A highly customizable order form that is the last step in an
@@ -395,6 +395,26 @@ export default function Home() {
                     rel="noopener noreferrer"
                   >
                     customized order form
+                  </a>
+                </div>
+              </div>
+              <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
+                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
+                  Stock Viewer - personal
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                  This is currently a work in progress for fetching and
+                  displaying stock data on a personalized dashboard. Check out
+                  the GitHub repo.
+                </p>
+                <div className="flex justify-between">
+                  <a
+                    href="https://github.com/adamhinckley/stock-viewer"
+                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Github repository
                   </a>
                 </div>
               </div>
