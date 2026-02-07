@@ -2,9 +2,76 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Project, { type ProjectProps } from "./components/Project";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const projects: ProjectProps[] = [
+    {
+      title: "Ward Program - personal",
+      description:
+        'A "plain like paper" program for church congregations that members get access to by scanning a QR code. This has had active users since July 2024 and is maintained in production. Built using Next.js, TypeScript, and Material UI.',
+      links: [
+        {
+          href: "https://www.wardprogram.com/",
+          label: "Website",
+        },
+        {
+          href: "https://github.com/adamhinckley/ward-program",
+          label: "Github",
+        },
+      ],
+    },
+    {
+      title: "ClickBank Order Form - professional",
+      description:
+        "A highly customizable order form that is the last step in an affiliate marketing sales funnel. This project led to a 70% increase in customized forms and an 8% increase in overall conversion. Built using Next.js, TypeScript, and Material UI.",
+      links: [
+        {
+          href: "https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex",
+          label: "vanilla order form",
+        },
+        {
+          href: "https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&exitoffer=exitoffer2&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&template=6A-bottles&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex",
+          label: "customized order form",
+        },
+      ],
+    },
+    {
+      title: "Stock Viewer - personal",
+      description:
+        "This is currently a work in progress.  It has cookie based authentication, a React frontend, and a NestJS backend. The frontend is built with Next.js, TypeScript, and Tailwind CSS, while the backend is built with NestJS and Supabase. The app allows users to search for stocks and view detailed information about them.",
+      links: [
+        {
+          href: "https://github.com/adamhinckley/stock-viewer",
+          label: "Frontend repo",
+        },
+        {
+          href: "https://github.com/adamhinckley/stock-aggregator-backend",
+          label: "Backend repo",
+        },
+        {
+          href: "https://stock-viewer-gules.vercel.app/",
+          label: "Live demo",
+        },
+      ],
+    },
+    {
+      title: "Design System - personal",
+      description:
+        "A WIP design system built using React, TypeScript, and shadcdn. This will be accessible to the public and open source when it's ready, but you can check out the GitHub repo and Storybook in the meantime.",
+      links: [
+        {
+          href: "https://github.com/adamhinckley/design-system",
+          label: "Github",
+        },
+        {
+          href: "https://design-system-hazel-mu.vercel.app/?path=/docs/design-system--docs",
+          label: "Storybook",
+        },
+      ],
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black" id="top">
@@ -340,86 +407,13 @@ export default function Home() {
               Featured Projects
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
-                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                  Ward Program - personal
-                </h3>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  A "plain like paper" program for church congregations that
-                  members get access to by scanning a QR code. This has had
-                  active users since July 2024 and is maintained in production.
-                  Built using Next.js, TypeScript, and Material UI.
-                </p>
-                <div className="flex justify-between">
-                  <a
-                    href="https://www.wardprogram.com/"
-                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Website
-                  </a>
-                  <a
-                    href="https://github.com/adamhinckley/ward-program"
-                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Github repository
-                  </a>
-                </div>
-              </div>
-              <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
-                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                  ClickBank Order Form - professional
-                </h3>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  A highly customizable order form that is the last step in an
-                  affiliate marketing sales funnel. This project led to a 70%
-                  increase in customized forms and an 8% increase in overall
-                  conversion. Built using Next.js, TypeScript, and Material UI.
-                </p>
-                <div className="flex justify-between">
-                  <a
-                    href="https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex"
-                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    vanilla order form
-                  </a>
-                  <a
-                    href="https://orders.clickbank.net/?affi=mitox&cbfid=57989&cbitems=mitolyn-06A&corid=0277736a-85ba-4300-add0-969f6abdc90b&exitoffer=exitoffer2&oaref=01.87E7EFFA0628E7D1CC368DD52B0890C0067784654EDB40D6F5647EF0C1910072582ECAB4&template=6A-bottles&time=1769106796&vtid=index&vvvv=mitolyn&vvar=cbfid%3D57989%26cbitems%3Dmitolyn-06A%26exitoffer%3Dexitoffer2%26template%3D6A-bottles%26vtid%3Dindex"
-                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    customized order form
-                  </a>
-                </div>
-              </div>
-              <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
-                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
-                  Stock Viewer - personal
-                </h3>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  This is currently a work in progress for fetching and
-                  displaying stock data on a personalized dashboard. Check out
-                  the GitHub repo.
-                </p>
-                <div className="flex justify-between">
-                  <a
-                    href="https://github.com/adamhinckley/stock-viewer"
-                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Github repository
-                  </a>
-                </div>
-              </div>
+              {projects.map((project) => (
+                <Project key={project.title} {...project} />
+              ))}
             </div>
           </section>
+
+          {/* Volunteering Section */}
           <section id="volunteer" className="py-16 flex flex-col gap-6 ">
             <h2 className="text-3xl font-bold text-black dark:text-white">
               Volunteering
