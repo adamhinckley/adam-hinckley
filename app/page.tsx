@@ -1,5 +1,7 @@
 "use client";
 
+import ContextDemo from "@/content/components/ContextDemo";
+import ZustandDemo from "@/content/components/ZustandShallowDemo";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,10 +13,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-40 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link
-            href="#top"
-            className="text-xl font-bold text-black dark:text-white"
-          >
+          <Link href="#top" className="text-xl font-bold text-black dark:text-white">
             Adam Hinckley
           </Link>
 
@@ -43,6 +42,12 @@ export default function Home() {
               className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
             >
               Projects
+            </Link>
+            <Link
+              href="/articles"
+              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+            >
+              Articles
             </Link>
             <Link
               href="#volunteer"
@@ -115,6 +120,13 @@ export default function Home() {
                 Projects
               </Link>
               <Link
+                href="/articles"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Articles
+              </Link>
+              <Link
                 href="#volunteer"
                 className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
                 onClick={() => setIsMenuOpen(false)}
@@ -140,9 +152,7 @@ export default function Home() {
             {/* <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white">
               Adam Hinckley
             </h1> */}
-            <p className="text-2xl text-black dark:text-white">
-              Senior Frontend Engineer
-            </p>
+            <p className="text-2xl text-black dark:text-white">Senior Frontend Engineer</p>
           </div>
           <div className="flex gap-4 pt-4">
             <a
@@ -167,25 +177,22 @@ export default function Home() {
             </h2> */}
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-4">
-              Hello! I'm Adam Hinckley. I live in Alabama and I am seeking a
-              remote software engineering position. I have over six years of
-              experience as a frontend developer, specializing in building
-              high-quality web applications using React, Next.js, and
+              Hello! I'm Adam Hinckley. I live in Alabama and I am seeking a remote software
+              engineering position. I have over six years of experience as a frontend developer,
+              specializing in building high-quality web applications using React, Next.js, and
               TypeScript.
             </p>
             <p className="text-lg text-zinc-600 dark:text-zinc-400">
-              When I'm not coding, you can find me volunteering in my community,
-              growing food in my garden, or mediating arguments between my
-              children about who gets the last piece of pizza.
+              When I'm not coding, you can find me volunteering in my community, growing food in my
+              garden, or mediating arguments between my children about who gets the last piece of
+              pizza.
             </p>
           </div>
         </section>
 
         {/* Skills Section */}
         <section id="skills" className="py-8 md:py-4 flex flex-col gap-6">
-          <h2 className="text-3xl font-bold text-black dark:text-white">
-            Skills
-          </h2>
+          <h2 className="text-3xl font-bold text-black dark:text-white">Skills</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <ul className="space-y-2 text-zinc-600 dark:text-zinc-400">
@@ -219,9 +226,7 @@ export default function Home() {
 
         {/* Experience Section */}
         <section id="experience" className="py-8 md:py-4 flex flex-col gap-6">
-          <h2 className="text-3xl font-bold text-black dark:text-white">
-            Experience
-          </h2>
+          <h2 className="text-3xl font-bold text-black dark:text-white">Experience</h2>
           <div className="space-y-8">
             <div className="border-l-2 border-zinc-300 dark:border-zinc-700 pl-6">
               <h3 className="text-xl font-semibold text-black dark:text-white">
@@ -239,70 +244,59 @@ export default function Home() {
                   >
                     order form{" "}
                   </a>
-                  and WYSIWYG editor, resulting in a 70% increase in customized
-                  forms leading to an 8% increase in overall conversion
+                  and WYSIWYG editor, resulting in a 70% increase in customized forms leading to an
+                  8% increase in overall conversion
                 </li>
                 <li>
-                  • Led migration of multiple accounting tools into an updated
-                  micro-frontend architecture with modernized UI and SSO login,
-                  reducing chargeback, payment, and service processing time by
-                  50%.
+                  • Led migration of multiple accounting tools into an updated micro-frontend
+                  architecture with modernized UI and SSO login, reducing chargeback, payment, and
+                  service processing time by 50%.
                 </li>
                 <li>
-                  • Created a host of new MJML email templates using React,
-                  Storybook and Handlebars making it easy for the marketing team
-                  to create and edit email campaigns
+                  • Created a host of new MJML email templates using React, Storybook and Handlebars
+                  making it easy for the marketing team to create and edit email campaigns
                 </li>
                 <li>
-                  • Built intuitive UIs for AI-powered compliance and fraud
-                  detection tools, streamlining product onboarding and reducing
-                  risks in transaction flows resulting in a 12% decrease in
-                  fraud and a 50% faster onboarding time
+                  • Built intuitive UIs for AI-powered compliance and fraud detection tools,
+                  streamlining product onboarding and reducing risks in transaction flows resulting
+                  in a 12% decrease in fraud and a 50% faster onboarding time
                 </li>
               </ul>
             </div>
           </div>
           <div className="space-y-8">
             <div className="border-l-2 border-zinc-300 dark:border-zinc-700 pl-6">
-              <h3 className="text-xl font-semibold text-black dark:text-white">
-                Owner / Operator
-              </h3>
+              <h3 className="text-xl font-semibold text-black dark:text-white">Owner / Operator</h3>
               <p className="text-zinc-600 dark:text-zinc-400">
-                Hinckley Financial (insurance services) • January 2008 -
-                December 2019, Boise, ID
+                Hinckley Financial (insurance services) • January 2008 - December 2019, Boise, ID
               </p>
               <ul className="mt-3 space-y-2 text-zinc-600 dark:text-zinc-400">
                 <li>
-                  • Led a team of 25 agents, expanding the client base to over
-                  15,000 through targeted nationwide sales and comprehensive
-                  product training programs.
+                  • Led a team of 25 agents, expanding the client base to over 15,000 through
+                  targeted nationwide sales and comprehensive product training programs.
                 </li>
                 <li>
-                  • Developed custom software solutions that streamlined
-                  operations and simplified processes for 2,000+ agents.
+                  • Developed custom software solutions that streamlined operations and simplified
+                  processes for 2,000+ agents.
                 </li>
               </ul>
             </div>
           </div>
           <div className="space-y-8">
             <div className="border-l-2 border-zinc-300 dark:border-zinc-700 pl-6">
-              <h3 className="text-xl font-semibold text-black dark:text-white">
-                Sales Manager
-              </h3>
+              <h3 className="text-xl font-semibold text-black dark:text-white">Sales Manager</h3>
               <p className="text-zinc-600 dark:text-zinc-400">
-                A&E Autoglass (auto glass sales and installation) • June 2005 -
-                January 2008, Mesa, AZ
+                A&E Autoglass (auto glass sales and installation) • June 2005 - January 2008, Mesa,
+                AZ
               </p>
               <ul className="mt-3 space-y-2 text-zinc-600 dark:text-zinc-400">
                 <li>
-                  • Led training and ongoing support for sales representatives
-                  at car wash locations, achieving 60% year-over-year sales
-                  increase.
+                  • Led training and ongoing support for sales representatives at car wash
+                  locations, achieving 60% year-over-year sales increase.
                 </li>
                 <li>
-                  • Cultivated and maintained relationships with car wash
-                  owners, securing continued partnerships and uncovering new
-                  growth opportunities.
+                  • Cultivated and maintained relationships with car wash owners, securing continued
+                  partnerships and uncovering new growth opportunities.
                 </li>
               </ul>
             </div>
@@ -310,9 +304,7 @@ export default function Home() {
         </section>
 
         <section id="education" className="py-16 flex flex-col gap-6">
-          <h2 className="text-3xl font-bold text-black dark:text-white">
-            Education
-          </h2>
+          <h2 className="text-3xl font-bold text-black dark:text-white">Education</h2>
           <div className="space-y-8">
             <div className="border-l-2 border-zinc-300 dark:border-zinc-700 pl-6">
               <h3 className="text-xl font-semibold text-black dark:text-white">
@@ -326,9 +318,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-black dark:text-white">
                 Utah Valley University
               </h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Culinary Arts • 2003 - 2006
-              </p>
+              <p className="text-zinc-600 dark:text-zinc-400">Culinary Arts • 2003 - 2006</p>
             </div>
           </div>
         </section>
@@ -336,19 +326,16 @@ export default function Home() {
         {/* Projects Section */}
         <>
           <section id="projects" className="py-16 flex flex-col gap-6">
-            <h2 className="text-3xl font-bold text-black dark:text-white">
-              Featured Projects
-            </h2>
+            <h2 className="text-3xl font-bold text-black dark:text-white">Featured Projects</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
                 <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
                   Ward Program - personal
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  A "plain like paper" program for church congregations that
-                  members get access to by scanning a QR code. This has had
-                  active users since July 2024 and is maintained in production.
-                  Built using Next.js, TypeScript, and Material UI.
+                  A "plain like paper" program for church congregations that members get access to
+                  by scanning a QR code. This has had active users since July 2024 and is maintained
+                  in production. Built using Next.js, TypeScript, and Material UI.
                 </p>
                 <div className="flex justify-between">
                   <a
@@ -374,10 +361,9 @@ export default function Home() {
                   ClickBank Order Form - professional
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  A highly customizable order form that is the last step in an
-                  affiliate marketing sales funnel. This project led to a 70%
-                  increase in customized forms and an 8% increase in overall
-                  conversion. Built using Next.js, TypeScript, and Material UI.
+                  A highly customizable order form that is the last step in an affiliate marketing
+                  sales funnel. This project led to a 70% increase in customized forms and an 8%
+                  increase in overall conversion. Built using Next.js, TypeScript, and Material UI.
                 </p>
                 <div className="flex justify-between">
                   <a
@@ -403,9 +389,8 @@ export default function Home() {
                   Stock Viewer - personal
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  This is currently a work in progress for fetching and
-                  displaying stock data on a personalized dashboard. Check out
-                  the GitHub repo.
+                  This is currently a work in progress for fetching and displaying stock data on a
+                  personalized dashboard. Check out the GitHub repo.
                 </p>
                 <div className="flex justify-between">
                   <a
@@ -421,22 +406,17 @@ export default function Home() {
             </div>
           </section>
           <section id="volunteer" className="py-16 flex flex-col gap-6 ">
-            <h2 className="text-3xl font-bold text-black dark:text-white">
-              Volunteering
-            </h2>
+            <h2 className="text-3xl font-bold text-black dark:text-white">Volunteering</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
                 <h3 className="text-xl font-semibold text-black dark:text-white mb-2">
                   Youth Seminary Teacher
                 </h3>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-4">August 2024 - Present</p>
                 <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  August 2024 - Present
-                </p>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  Early morning seminary for The Church of Jesus Christ of
-                  Latter-day Saints. I volunteer as a seminary teacher for high
-                  school students, teaching them principles of faith, integrity,
-                  and service.
+                  Early morning seminary for The Church of Jesus Christ of Latter-day Saints. I
+                  volunteer as a seminary teacher for high school students, teaching them principles
+                  of faith, integrity, and service.
                 </p>
               </div>
               <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition">
@@ -444,10 +424,9 @@ export default function Home() {
                   Fire & Fellowship
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  A meeting for men to gather, build relationships, and serve
-                  one another. I organize and lead this group that meets
-                  periodically at my backyard firepit to foster camaraderie and
-                  personal growth.
+                  A meeting for men to gather, build relationships, and serve one another. I
+                  organize and lead this group that meets periodically at my backyard firepit to
+                  foster camaraderie and personal growth.
                 </p>
               </div>
             </div>
@@ -456,9 +435,7 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="py-8 md:py-4 flex flex-col gap-6">
-          <h2 className="text-3xl font-bold text-black dark:text-white">
-            Get In Touch
-          </h2>
+          <h2 className="text-3xl font-bold text-black dark:text-white">Get In Touch</h2>
 
           <div className="flex gap-6">
             <a
@@ -493,6 +470,8 @@ export default function Home() {
           </p>
         </footer>
       </main>
+      <ContextDemo />
+      <ZustandDemo />
     </div>
   );
 }
