@@ -156,7 +156,16 @@ export default function ZustandDemo() {
   return (
     <section className="flex flex-col gap-6 rounded-2xl border border-emerald-200 dark:border-emerald-800 bg-zinc-50 dark:bg-black p-6">
       <header className="flex flex-col gap-2">
-        <h3 className="text-xl font-semibold text-black dark:text-white">Zustand Demo</h3>
+        <span className="flex items-center gap-4">
+          <h3 className="text-xl font-semibold text-black dark:text-white">Zustand Demo</h3>
+          <a
+            href="https://github.com/adamhinckley/adam-hinckley/blob/main/content/components/ZustandDemo.tsx"
+            target="_blank"
+            className="text-sm text-blue-600 dark:text-blue-400 mt-4"
+          >
+            View source code
+          </a>
+        </span>
         <p className="text-sm text-zinc-600 dark:text-zinc-400">
           Click the button to update the shared state. Each child subscribes to Zustand, but only
           Child C accesses the updated value, so only Child C re-renders when the button is clicked.

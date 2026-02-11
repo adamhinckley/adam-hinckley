@@ -166,7 +166,16 @@ export default function ContextDemo() {
     <DemoProvider>
       <section className="flex flex-col gap-6 rounded-2xl border border-blue-200 dark:border-blue-800 bg-zinc-50 dark:bg-black p-6">
         <header className="flex flex-col gap-2">
-          <h3 className="text-xl font-semibold text-black dark:text-white">Context Demo</h3>
+          <span className="flex items-center gap-4">
+            <h3 className="text-xl font-semibold text-black dark:text-white">Context Demo</h3>
+            <a
+              href="https://github.com/adamhinckley/adam-hinckley/blob/main/content/components/ContextDemo.tsx"
+              target="_blank"
+              className="text-sm text-blue-600 dark:text-blue-400 mt-4"
+            >
+              View source code
+            </a>
+          </span>
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
             Click "Say Hello" to update the context state. Notice how every component except for{" "}
             <strong>Child A</strong> flashes because of re-renders, even if they don't access the
