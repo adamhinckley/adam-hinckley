@@ -1,3 +1,4 @@
+import Link from "next/link";
 export type ProjectLink = {
   href: string;
   label: string;
@@ -20,7 +21,7 @@ export default function Project({ title, description, links }: ProjectProps) {
         {links.map((link) => {
           const isInternal = link.href.startsWith("/");
           return (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
@@ -28,7 +29,7 @@ export default function Project({ title, description, links }: ProjectProps) {
               rel={isInternal ? undefined : "noopener noreferrer"}
             >
               {link.label}
-            </a>
+            </Link>
           );
         })}
       </div>
