@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { articles } from "#site/content";
+import { articles } from "#velite/content";
 import MDXContent from "./mdx";
 import ContextDemo from "@/content/components/ContextDemo";
 import ZustandDemo from "@/content/components/ZustandDemo";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { articles } from "#site/content";
+import { articles } from "#velite/content";
 
 const sortedArticles = [...articles].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),

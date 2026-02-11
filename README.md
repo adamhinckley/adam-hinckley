@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Adam Hinckley's Personal Site
+
+A Next.js personal website with an articles section using MDX, built with TypeScript, Tailwind CSS,
+and Velite.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-## Learn More
+## Writing Articles
 
-To learn more about Next.js, take a look at the following resources:
+Articles are written in MDX and stored in `content/articles/`. The content is processed by
+[Velite](https://velite.js.org/) and rendered with syntax highlighting via
+[rehype-pretty-code](https://rehype-pretty-code.netlify.app/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Development Workflow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run this in a separate termoinal to get hot reloading in MDX files
 
-## Deploy on Vercel
+1. Create a new `.mdx` file in `content/articles/`
+2. Add your frontmatter and content
+3. Start the dev server with `pnpm dev`
+4. Start the Velite server with `pnpm run velite:dev` This bullds the articles and enables hot
+   reloading
+5. Visit `/articles` to see your new article
+6. Changes to MDX files trigger automatic rebuilds
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Including React Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To use React components in your MDX articles:
+
+1. Store article components in `content/components/`
+2. Import it in `app/articles/[slug]/page.tsx`
+3. Add it to the `components` prop in the `MDXContent` component
+4. Use it directly in any MDX file without importing
+
+Example:
+
+```tsx
+// app/articles/[slug]/page.tsx
+import MyComponent from "@/content/components/MyComponent";
+
+// In the component:
+<MDXContent code={article.code} components={{ MyComponent }} />;
+```
+
+```mdx
+<!-- content/articles/my-article.mdx -->
+
+# My Article
+
+<MyComponent />
+```
