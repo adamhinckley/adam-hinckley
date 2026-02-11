@@ -151,24 +151,30 @@ body {
   margin-top: 0.5rem;
 }
 
-@keyframes flash-pop {
+@keyframes text-flash {
   0% {
-    opacity: 0;
-    transform: scale(0.95);
+    color: var(--flash-start);
   }
-  20% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1);
+  30% {
+    color: var(--flash-end);
   }
   100% {
-    opacity: 0;
-    transform: scale(1);
+    color: var(--flash-start);
   }
 }
-.animate-flash {
-  animation: flash-pop 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+.text-flash {
+  --flash-start: #71717a;
+  --flash-end: #18181b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-flash {
+    --flash-start: #a1a1aa;
+    --flash-end: #f4f4f5;
+  }
+}
+
+.animate-text-flash {
+  animation: text-flash 0.5s ease-in-out;
 }

@@ -1,7 +1,4 @@
 "use client";
-
-import ContextDemo from "@/content/components/ContextDemo";
-import ZustandDemo from "@/content/components/ZustandShallowDemo";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -470,8 +467,6 @@ export default function Home() {
           </p>
         </footer>
       </main>
-      <ContextDemo />
-      <ZustandDemo />
     </div>
   );
 }
