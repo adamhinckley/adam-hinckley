@@ -1,4 +1,5 @@
 import { defineCollection, defineConfig, s } from "velite";
+import rehypePrettyCode from "rehype-pretty-code";
 
 const articles = defineCollection({
   name: "Article",
@@ -33,5 +34,17 @@ export default defineConfig({
   collections: { articles },
   mdx: {
     gfm: true,
+    rehypePlugins: [
+      [
+        rehypePrettyCode,
+        {
+          theme: {
+            light: "github-light",
+            dark: "github-dark",
+          },
+          keepBackground: false,
+        },
+      ],
+    ],
   },
 });
