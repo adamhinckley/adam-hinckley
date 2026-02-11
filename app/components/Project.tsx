@@ -19,7 +19,6 @@ export default function Project({ title, description, links }: ProjectProps) {
       <div className="flex justify-between">
         {links.map((link) => {
           const isInternal = link.href.startsWith("/");
-          console.log("isInternal", isInternal, title);
           return (
             <a
               key={link.label}
