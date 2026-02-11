@@ -88,7 +88,6 @@ function DemoChildA({ label }: { label: string }) {
   renderCount.current += 1;
   const flashKey = renderCount.current;
   console.log("Context Child A Rendered");
-  console.log("flashKey", flashKey);
   return (
     <div className="rounded-xl border border-blue-200 dark:border-blue-800 bg-white dark:bg-zinc-950 p-4">
       <p
@@ -173,7 +172,7 @@ export default function ContextDemo() {
               target="_blank"
               className="text-sm text-blue-600 dark:text-blue-400 mt-4"
             >
-              View source code
+              view source code
             </a>
           </span>
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
