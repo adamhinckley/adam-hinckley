@@ -32,3 +32,149 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #3f3f46;
+  line-height: 1.75;
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-content {
+    color: #d4d4d8;
+  }
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  color: #111827;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-content h1,
+  .article-content h2,
+  .article-content h3,
+  .article-content h4 {
+    color: #f8fafc;
+  }
+}
+
+.article-content h2 {
+  font-size: 1.75rem;
+  margin-top: 1.25rem;
+}
+
+.article-content h3 {
+  font-size: 1.35rem;
+  margin-top: 1rem;
+}
+
+.article-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-content a {
+    color: #60a5fa;
+  }
+}
+
+.article-content pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+.article-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.article-content :not(pre) > code {
+  background: #f4f4f5;
+  color: #111827;
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+  font-size: 0.95em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-content :not(pre) > code {
+    background: #1f2937;
+    color: #e5e7eb;
+  }
+}
+
+.article-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 1.5rem;
+  list-style-position: outside;
+  margin: 0;
+}
+
+.article-content ul {
+  list-style-type: disc;
+}
+
+.article-content ol {
+  list-style-type: decimal;
+}
+
+.article-content li {
+  display: list-item;
+}
+
+.article-content ul li {
+  list-style-type: disc;
+}
+
+.article-content ol li {
+  list-style-type: decimal;
+}
+
+.article-content li + li {
+  margin-top: 0.5rem;
+}
+
+@keyframes text-flash {
+  0% {
+    color: var(--flash-start);
+  }
+  30% {
+    color: var(--flash-end);
+  }
+  100% {
+    color: var(--flash-start);
+  }
+}
+
+.text-flash {
+  --flash-start: #71717a;
+  --flash-end: #18181b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-flash {
+    --flash-start: #a1a1aa;
+    --flash-end: #f4f4f5;
+  }
+}
+
+.animate-text-flash {
+  animation: text-flash 0.5s ease-in-out;
+}
