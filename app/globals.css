@@ -100,6 +100,16 @@ body {
   padding: 0;
 }
 
+.article-content pre code span {
+  color: var(--shiki-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-content pre code span {
+    color: var(--shiki-dark);
+  }
+}
+
 .article-content :not(pre) > code {
   background: #f4f4f5;
   color: #111827;
