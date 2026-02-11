@@ -163,7 +163,7 @@ export default function ZustandDemo() {
             target="_blank"
             className="text-sm text-blue-600 dark:text-blue-400 mt-4"
           >
-            View source code
+            view source code
           </a>
         </span>
         <p className="text-sm text-zinc-600 dark:text-zinc-400">
