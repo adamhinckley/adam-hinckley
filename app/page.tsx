@@ -91,6 +91,12 @@ export default function Home() {
           <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800">
             <div className="max-w-4xl mx-auto px-6 py-4 flex flex-col gap-4">
               <Link
+                href="/articles"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+              >
+                Articles
+              </Link>
+              <Link
                 href="#about"
                 className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
                 onClick={() => setIsMenuOpen(false)}
