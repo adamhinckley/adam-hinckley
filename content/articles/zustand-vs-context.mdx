@@ -3,11 +3,8 @@ title: "Zustand vs Context: Solving Unnecessary re-renders in React"
 date: "2026-02-09"
 summary: |
   Zustand gives you fine-grained, selective subscriptions so only the components that actually depend on changed state re-render — a huge win over React Context, where every update triggers re-renders across all consumers.
-coverImage: "/articles/hello-contentlayer.svg"
+coverImage: "/articles/context-vs-zustand.svg"
 ---
-
-import ContextDemo from "../components/ContextDemo";
-import ZustandShallow from "../components/ZustandShallowDemo";
 
 ## Using Zustand to boost performance in React apps? It works, but watch out for this common footgun.
 
@@ -191,11 +188,11 @@ Both prevent unnecessary re-renders when unrelated state changes.
 
 ## These live demos show the difference in action.
 
-These components are identical except for how they subscribe to state changes. Open the console and
-refresh the page. You'll see logs for each render. Click the button in Child C to update the state
-and watch how only the relevant components re-render with Zustand, while all consumers re-render
-with Context.
+These components are identical except for how they subscribe to state changes. **_Open the console
+and refresh the page._** You'll see logs for each render. Click the button in Child C to update the
+state and watch how only the relevant components re-render with Zustand, while all consumers
+re-render with Context.
 
 <div id="live-demo" />
 <ContextDemo />
-<ZustandShallow />
+<ZustandDemo />

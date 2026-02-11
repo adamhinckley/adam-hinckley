@@ -21,19 +21,18 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "#site/content": ["./.velite"]
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "contentlayer.config.ts",
-    "contentlayer/generated",
+    "velite.config.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    ".contentlayer/generated"
+    ".velite"
   ],
   "exclude": ["node_modules"]
 }

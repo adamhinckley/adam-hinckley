@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { allArticles } from "contentlayer/generated";
+import { articles } from "#site/content";
 
-const sortedArticles = [...allArticles].sort(
+const sortedArticles = [...articles].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
 
@@ -16,18 +16,14 @@ export default function ArticlesPage() {
   return (
     <section className="flex flex-col gap-10">
       <header className="flex flex-col gap-3">
-        <h1 className="text-3xl font-bold text-black dark:text-white">
-          Articles
-        </h1>
+        <h1 className="text-3xl font-bold text-black dark:text-white">Articles</h1>
         <p className="text-zinc-600 dark:text-zinc-400">
           Writing on product, design, and engineering.
         </p>
       </header>
 
       {sortedArticles.length === 0 ? (
-        <p className="text-zinc-600 dark:text-zinc-400">
-          No articles published yet.
-        </p>
+        <p className="text-zinc-600 dark:text-zinc-400">No articles published yet.</p>
       ) : (
         <ul className="grid gap-6">
           {sortedArticles.map((article) => (
@@ -45,9 +41,7 @@ export default function ArticlesPage() {
                       {formatDate(article.date)}
                     </span>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
-                    {article.summary}
-                  </p>
+                  <p className="text-zinc-600 dark:text-zinc-400">{article.summary}</p>
                   {article.coverImage ? (
                     <img
                       src={article.coverImage}

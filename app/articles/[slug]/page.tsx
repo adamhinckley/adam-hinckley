@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allArticles } from "contentlayer/generated";
+import { articles } from "#site/content";
 import MDXContent from "./mdx";
+import ContextDemo from "@/content/components/ContextDemo";
+import ZustandDemo from "@/content/components/ZustandDemo";
 
-export const generateStaticParams = () =>
-  allArticles.map((article) => ({ slug: article.slug }));
+export const generateStaticParams = () => articles.map((article) => ({ slug: article.slug }));
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
 
 const getArticleUrl = (slug: string) => `${siteUrl}/articles/${slug}`;
 
@@ -27,7 +26,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = allArticles.find((item) => item.slug === slug);
+  const article = articles.find((item) => item.slug === slug);
 
   if (!article) {
     return {
@@ -70,13 +69,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function ArticlePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const article = allArticles.find((item) => item.slug === slug);
+  const article = articles.find((item) => item.slug === slug);
 
   if (!article) {
     notFound();
@@ -111,13 +106,9 @@ export default async function ArticlePage({
             Articles
           </Link>
           <span>/</span>
-          <span className="text-zinc-600 dark:text-zinc-400">
-            {article.title}
-          </span>
+          <span className="text-zinc-600 dark:text-zinc-400">{article.title}</span>
         </div>
-        <h1 className="text-3xl font-bold text-black dark:text-white">
-          {article.title}
-        </h1>
+        <h1 className="text-3xl font-bold text-black dark:text-white">{article.title}</h1>
         <p className="text-zinc-600 dark:text-zinc-400">{article.summary}</p>
         <p className="text-sm text-zinc-500 dark:text-zinc-500">
           {new Date(article.date).toLocaleDateString("en-US", {
@@ -137,7 +128,7 @@ export default async function ArticlePage({
       ) : null}
 
       <div className="article-content">
-        <MDXContent code={article.body.code} />
+        <MDXContent code={article.code} components={{ ContextDemo, ZustandDemo }} />
       </div>
     </article>
   );

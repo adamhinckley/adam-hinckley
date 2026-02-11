@@ -17,6 +17,12 @@ export default function Home() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-6">
             <Link
+              href="/articles"
+              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+            >
+              Articles
+            </Link>
+            <Link
               href="#about"
               className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
             >
@@ -39,12 +45,6 @@ export default function Home() {
               className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
             >
               Projects
-            </Link>
-            <Link
-              href="/articles"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-            >
-              Articles
             </Link>
             <Link
               href="#volunteer"
