@@ -5,7 +5,7 @@ import Link from "next/link";
 const MobileNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <>
+    <div className="md:hidden">
       {/* Hamburger Button */}
       <button
         className="md:hidden flex flex-col gap-1.5 w-6 h-6"
@@ -31,11 +31,12 @@ const MobileNav = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800">
+        <div className="absolute left-0 right-0 top-full border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-black/95 backdrop-blur-md">
           <div className="max-w-4xl mx-auto px-6 py-4 flex flex-col gap-4">
             <Link
               href="/articles"
               className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
+              onClick={() => setIsMenuOpen(false)}
             >
               Articles
             </Link>
@@ -84,7 +85,7 @@ const MobileNav = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
