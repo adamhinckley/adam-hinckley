@@ -1,5 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "#velite/content";
+import { siteUrl } from "../util/constants";
+
+export const metadata: Metadata = {
+  title: "Articles",
+  description:
+    "Technical articles by Adam Hinckley about frontend engineering and web performance.",
+  alternates: {
+    canonical: "/articles",
+  },
+  openGraph: {
+    type: "website",
+    title: "Articles",
+    description:
+      "Technical articles by Adam Hinckley about frontend engineering and web performance.",
+    url: `${siteUrl}/articles`,
+  },
+  twitter: {
+    card: "summary",
+    title: "Articles",
+    description:
+      "Technical articles by Adam Hinckley about frontend engineering and web performance.",
+  },
+};
 
 const sortedArticles = [...articles].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
