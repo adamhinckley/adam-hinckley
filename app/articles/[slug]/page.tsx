@@ -5,10 +5,9 @@ import { articles } from "#velite/content";
 import MDXContent from "./mdx";
 import ContextDemo from "@/content/components/ContextDemo";
 import ZustandDemo from "@/content/components/ZustandDemo";
+import { siteUrl } from "../../util/constants";
 
 export const generateStaticParams = () => articles.map((article) => ({ slug: article.slug }));
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
 
 const getArticleUrl = (slug: string) => `${siteUrl}/articles/${slug}`;
 
@@ -84,10 +83,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     "@type": "Article",
     headline: article.title,
     description: article.summary,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
     datePublished: new Date(article.date).toISOString(),
     dateModified: new Date(article.date).toISOString(),
     author: {
       "@type": "Person",
+      name: "Adam Hinckley",
+    },
+    publisher: {
+      "@type": "Organization",
       name: "Adam Hinckley",
     },
     url: articleUrl,

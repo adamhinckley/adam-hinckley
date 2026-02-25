@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { siteUrl } from "./util/constants";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,9 +15,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adam Hinckley",
-  description: "Senior Frontend Developer Portfolio of Adam Hinckley",
-  referrer: "no-referrer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Adam Hinckley | Senior Frontend Engineer",
+    template: "%s | Adam Hinckley",
+  },
+  description: "Portfolio and articles by Adam Hinckley, senior frontend engineer.",
+  referrer: "strict-origin-when-cross-origin",
+  openGraph: {
+    type: "website",
+    siteName: "Adam Hinckley",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default function RootLayout({
