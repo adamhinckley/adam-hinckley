@@ -1,12 +1,12 @@
-"use client";
 import Link from "next/link";
-import { useState } from "react";
 import Project from "./Project";
 import { projects } from "../data/projects";
+import dynamic from "next/dynamic";
 
-export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const DesktopNav = dynamic(() => import("./DesktopNav"));
+const MobileNav = dynamic(() => import("./MobileNav"));
 
+export default function HomePageClient() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black" id="top">
       {/* Navigation */}
@@ -16,143 +16,14 @@ export default function Home() {
             Adam Hinckley
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-6">
-            <Link
-              href="/articles"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-            >
-              Articles
-            </Link>
-            <Link
-              href="#about"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-            >
-              About
-            </Link>
-            <Link
-              href="#experience"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-            >
-              Experience
-            </Link>
-            <Link
-              href="#education"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-            >
-              Education
-            </Link>
-            <Link
-              href="#projects"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-            >
-              Projects
-            </Link>
-            <Link
-              href="#volunteer"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-            >
-              Volunteering
-            </Link>
-            <Link
-              href="#contact"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-            >
-              Contact
-            </Link>
-          </div>
-
-          {/* Hamburger Button */}
-          <button
-            className="md:hidden flex flex-col gap-1.5 w-6 h-6"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`h-0.5 w-full bg-black dark:bg-white transition-transform ${
-                isMenuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            />
-            <span
-              className={`h-0.5 w-full bg-black dark:bg-white transition-opacity ${
-                isMenuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`h-0.5 w-full bg-black dark:bg-white transition-transform ${
-                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            />
-          </button>
+          <DesktopNav />
+          <MobileNav />
         </div>
-
-        {/* Mobile Navigation Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-zinc-200 dark:border-zinc-800">
-            <div className="max-w-4xl mx-auto px-6 py-4 flex flex-col gap-4">
-              <Link
-                href="/articles"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-              >
-                Articles
-              </Link>
-              <Link
-                href="#about"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="#experience"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Experience
-              </Link>
-              <Link
-                href="#education"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Education
-              </Link>
-              <Link
-                href="#projects"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Projects
-              </Link>
-              <Link
-                href="/articles"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Articles
-              </Link>
-              <Link
-                href="#volunteer"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Volunteering
-              </Link>
-              <Link
-                href="#contact"
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-        )}
       </nav>
 
       <main className="max-w-4xl mx-auto px-6 py-0">
         {/* Hero Section */}
-        <section id="top" className="py-16 md:py-24 flex flex-col gap-6">
+        <section className="py-16 md:py-24 flex flex-col gap-6">
           <div className="flex flex-col gap-4">
             {/* <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white">
               Adam Hinckley
