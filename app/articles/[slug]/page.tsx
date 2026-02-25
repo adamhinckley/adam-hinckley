@@ -5,10 +5,9 @@ import { articles } from "#velite/content";
 import MDXContent from "./mdx";
 import ContextDemo from "@/content/components/ContextDemo";
 import ZustandDemo from "@/content/components/ZustandDemo";
+import { siteUrl } from "../../util/constants";
 
 export const generateStaticParams = () => articles.map((article) => ({ slug: article.slug }));
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
 
 const getArticleUrl = (slug: string) => `${siteUrl}/articles/${slug}`;
 
