@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: { absolute: "Adam Hinckley | Senior Frontend Engineer" },
+    title: "Adam Hinckley | Senior Frontend Engineer",
     description:
       "Portfolio of Adam Hinckley, senior frontend engineer specializing in React, Next.js, and TypeScript.",
   },
